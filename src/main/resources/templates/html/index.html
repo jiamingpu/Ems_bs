@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页面展示</title>
+    <link rel="stylesheet" type="text/css" href="/layui/css/layui.css" > <!--引入layui的样式-->
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
+    <script src="/layui/layui.js"></script>
+    <meta http-equiv="refresh" content="120"> <!--页面几分钟刷新一次-->
+</head>
+
+<body>
+<harder><div th:replace="html/Top.html :: myharder"  ></div></harder>
+        <div id="main">
+            <div class="container">
+                <div class="section first-floor clear">
+                    <div class="left">
+                        <div id="navigation-category-content">
+                            <dl>
+                                <dt>美容彩妆</dt>
+                                <dd>
+                                    <a href="#">护肤</a>
+                                    <em>|</em>
+                                    <a href="#">面膜</a>
+                                    <em>|</em>
+                                    <a href="#">防晒</a>
+                                    <em>|</em>
+                                    <a href="#">彩妆</a>
+                                    <em>|</em>
+                                    <a href="#">香水</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>服饰箱包</dt>
+                                <dd>
+                                    <a href="#">大牌</a>
+                                    <em>|</em>
+                                    <a href="#">服饰</a>
+                                    <em>|</em>
+                                    <a href="#">箱包</a>
+                                    <em>|</em>
+                                    <a href="#">配饰</a>
+                                    <em>|</em>
+                                    <a href="#">鞋履</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>数码家电</dt>
+                                <dd>
+                                    <a href="#">手机</a>
+                                    <em>|</em>
+                                    <a href="#">生活</a>
+                                    <em>|</em>
+                                    <a href="#">厨房</a>
+                                    <em>|</em>
+                                    <a href="#">数码</a>
+                                    <em>|</em>
+                                    <a href="#">办公</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>家居个护</dt>
+                                <dd>
+                                    <a href="#">洗护</a>
+                                    <em>|</em>
+                                    <a href="#">居家</a>
+                                    <em>|</em>
+                                    <a href="#">女性</a>
+                                    <em>|</em>
+                                    <a href="#">宠物</a>
+                                    <em>|</em>
+                                    <a href="#">家纺</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>运动户外</dt>
+                                <dd>
+                                    <a href="#">运动服饰</a>
+                                    <em>|</em>
+                                    <a href="#">运动鞋</a>
+                                    <em>|</em>
+                                    <a href="#">户外服饰</a>
+                                    <em>|</em>
+                                    <a href="#">户外鞋靴</a>
+                                    <em>|</em>
+                                    <a href="#">户外装备</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>笔记本特卖</dt>
+                                <dd>
+                                    <a href="#">联想</a>
+                                    <em>|</em>
+                                    <a href="#">惠普</a>
+                                    <em>|</em>
+                                    <a href="#">戴尔</a>
+                                    <em>|</em>
+                                    <a href="#">苹果</a>
+                                    <em>|</em>
+                                    <a href="#">华为</a>
+                                    <em>|</em>
+                                    <a href="#">机械师</a>
+                                    <em>|</em>
+                                    <a href="#">雷神</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="center">
+                            <div class="layui-carousel" id="test1">
+                                <div carousel-item>
+                                    <div><img src="/pic/z1.jpg"></div>
+                                    <div><img src="/pic/z2.jpg"></div>
+                                    <div><img src="/pic/z3.jpg"></div>
+                                    <div><img src="/pic/z4.jpg"></div>
+                                    <div><img src="/pic/z5.jpg"></div>
+                                </div>
+
+                                <script>
+                                    layui.use('carousel', function(){
+                                        var carousel = layui.carousel;
+                                        //建造实例
+                                        carousel.render({
+                                            elem: '#test1'
+                                            ,width: '500px' //设置容器宽度
+                                            ,height:'450px'
+                                            ,arrow: 'hover' //悬停显示箭头
+                                            ,anim: 'fade' //切换动画方式
+                                            ,interval: 2000 //切换的时间
+                                        });
+                                    });
+                                </script>
+                    </div>
+                    </div>
+                    <div class="right">
+                        <div class="user">
+                            <img src="/img/avatar.png">
+                            <div class="welcome"><span style="color:#6F9;">点击下方登录</span><img src="/img/down.gif" style="width:20px; height:20px;"/> </div>
+                            <div>
+                                <a href="/Login/login" class="login" onmousemove="this.style.backgroundColor='#C09'" onmouseout="this.style.backgroundColor='#E00000'" >登录</a>
+                                <a href="/Login/registered" class="register" onmousemove="this.style.backgroundColor='#C09'" onmouseout="this.style.backgroundColor='#009900'">注册</a>
+                            </div>
+                        </div>
+                        <div class="notice">
+                            <h3>
+                                <a href="#">通知公告</a>
+                            </h3>
+                            <ul>
+                                <li>
+                                    <em>&middot;</em>
+                                    <a href="#">支持支付宝花呗支付！</a>
+                                    <span>11-21</span>
+                                </li>
+                                <li>
+                                    <em>&middot;</em>
+                                    <a href="#">支持支付宝花呗支付！</a>
+                                    <span>11-21</span>
+                                </li>
+                                <li>
+                                    <em>&middot;</em>
+                                    <a href="#">支持支付宝花呗支付！</a>
+                                    <span>11-21</span>
+                                </li>
+                                <li>
+                                    <em>&middot;</em>
+                                    <a href="#">支持支付宝花呗支付！</a>
+                                    <span>11-21</span>
+                                </li>
+                                <li>
+                                    <em>&middot;</em>
+                                    <a href="#">支持支付宝花呗支付！</a>
+                                    <span>11-21</span>
+                                </li>
+                                <li>
+                                    <em>&middot;</em>
+                                    <a href="#">支持支付宝花呗支付！</a>
+                                    <span>11-21</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="section second-floor goods-list-row clear">
+                    <div class="section-heading clear">
+                        <h2 class="float-left">
+                            <a href="#">限时秒杀</a>
+                        </h2>
+                        <ul class="float-right">
+                            <li>
+                                <a href="#">坚果</a>
+                            </li>
+                            <li class="separator">|</li>
+                            <li>
+                                <a href="#">面膜</a>
+                            </li>
+                            <li class="separator">|</li>
+                            <li>
+                                <a href="#">运动</a>
+                            </li>
+                            <li class="separator">|</li>
+                            <li>
+                                <a href="#">手表</a>
+                            </li>
+                            <li class="separator">|</li>
+                            <li>
+                                <a href="#">香水</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="goods-list-item">
+                        <div class="layui-anim layui-anim-scale">
+                        <div class="goods-list-image">
+                            <a href="#">
+                                <img src="/pic/goods/1.jpg">
+                            </a>
+                        </div>
+                        <div class="goods-list-name">
+                            <a href="#">Dior 迪奥 花漾甜心小姐女士淡香水......</a>
+                        </div>
+                        <div class="goods-list-info">
+                            <strong><em>￥</em>459</strong>
+                            <em>包邮</em>
+                            <span>￥615</span>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="goods-list-item">
+                        <div class="layui-anim layui-anim-scale">
+                        <div class="goods-list-image">
+                            <a href="#">
+                                <img src="/pic/goods/2.jpg">
+                            </a>
+                        </div>
+                        <div class="goods-list-name">
+                            <a href="#">Dior 迪奥 花漾甜心小姐女士淡香水......</a>
+                        </div>
+                        <div class="goods-list-info">
+                            <strong><em>￥</em>459</strong>
+                            <em>包邮</em>
+                            <span>￥615</span>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="goods-list-item">
+                        <div class="layui-anim layui-anim-scale">
+                            <div class="goods-list-image">
+                                <a href="#">
+                                    <img src="/pic/goods/3.jpg">
+                                </a>
+                            </div>
+                            <div class="goods-list-name">
+                                <a href="#">Dior 迪奥 花漾甜心小姐女士淡香水......</a>
+                            </div>
+                            <div class="goods-list-info">
+                                <strong><em>￥</em>459</strong>
+                                <em>包邮</em>
+                                <span>￥615</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="goods-list-item">
+                        <div class="layui-anim layui-anim-scale">
+                        <div class="goods-list-image">
+                            <a href="#">
+                                <img src="/pic/goods/4.jpg">
+                            </a>
+                        </div>
+                        <div class="goods-list-name">
+                            <a href="#">Dior 迪奥 花漾甜心小姐女士淡香水......</a>
+                        </div>
+                        <div class="goods-list-info">
+                            <strong><em>￥</em>459</strong>
+                            <em>包邮</em>
+                            <span>￥615</span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="section-heading clear">
+                    <h2 style="font-size: 25px; font-family: 'Arial Rounded MT Bold'" align="center">笔记本特卖</h2>
+                </div>
+                <div class="section fourth-floor clear">
+                    <div class="left">
+                        <a href="#">
+                            <img src="/pic/ad/bjb1.jpg">
+                        </a>
+                    </div>
+                    <div class="center">
+                        <div class="center-row clear">
+                            <div class="center-grid float-left">
+                                <dl style="background: url('/pic/ad/bjb2.jpg') center bottom no-repeat;">
+                                    <dt>
+                                        <a href="#">双十一特卖优惠</a>
+                                    </dt>
+                                    <dd>限时抢购券后3999元</dd>
+                                </dl>
+                            </div>
+                            <div class="center-grid float-left">
+                                <dl style="background: url('/pic/ad/bjb3.jpg') center bottom no-repeat;">
+                                    <dt>
+                                        <a href="#">双十一特卖优惠</a>
+                                    </dt>
+                                    <dd>限时抢购券后4999元</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="center-row clear">
+                            <div class="center-grid float-left">
+                                <dl style="background: url('/pic/ad/bjb4.jpg') center bottom no-repeat;">
+                                    <dt>
+                                        <a href="#">双十一特卖优惠</a>
+                                    </dt>
+                                    <dd>限时抢购券后6999元</dd>
+                                </dl>
+                            </div>
+                            <div class="center-grid float-left">
+                                <dl style="background: url('/pic/ad/bjb5.jpg') center bottom no-repeat;">
+                                    <dt>
+                                        <a href="#">双十一特卖优惠</a>
+                                    </dt>
+                                    <dd>限时抢购券后5699元</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="goods-ranking-list">
+                            <h3>最新热卖</h3>
+                            <ul>
+                                <li>
+                                    <img src="/pic/ad/rm1.jpg">
+                                    <div>
+                                        <a href="#">联想拯救者R7000 15.6英寸游戏本</a>
+                                        <strong>￥5999</strong>
+                                        <span>￥6999</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="/pic/ad/rm2.jpg">
+                                    <div>
+                                        <a href="#">联想(Lenovo)YOGA 14s 14英寸</a>
+                                        <strong>￥5999</strong>
+                                        <span>￥6999</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="/pic/ad/rm3.jpg">
+                                    <div>
+                                        <a href="#">宏碁(Acer)蜂鸟Fun 14英寸轻薄本</a>
+                                        <strong>￥4999</strong>
+                                        <span>￥5999</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="/pic/ad/rm4.jpg">
+                                    <div>
+                                        <a href="#">戴尔DELL灵越5000 酷睿i5 15.6英寸</a>
+                                        <strong>￥7999</strong>
+                                        <span>￥8999</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-heading clear">
+                    <h2 class="float-left">
+                        <a href="#">美容彩妆</a>
+                    </h2>
+                    <ul class="float-right">
+                        <li>
+                            <a href="#">护肤</a>
+                        </li>
+                        <li class="separator">|</li>
+                        <li>
+                            <a href="#">面膜</a>
+                        </li>
+                        <li class="separator">|</li>
+                        <li>
+                            <a href="#">防晒</a>
+                        </li>
+                        <li class="separator">|</li>
+                        <li>
+                            <a href="#">彩妆</a>
+                        </li>
+                        <li class="separator">|</li>
+                        <li>
+                            <a href="#">香水</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="section third-floor clear">
+                    <div class="left">
+                        <a href="#">
+                            <div class="layui-carousel" id="test2">
+                                <div carousel-item>
+                                    <div><img src="/pic/ad/1.png"></div>
+                                    <div><img src="/pic/ad/hf1.jpg"></div>
+                                    <div><img src="/pic/ad/hf2.jpg"></div>
+                                    <div><img src="/pic/ad/hf3.jpg"></div>
+                                    <div><img src="/pic/ad/hf4.jpg"></div>
+                                </div>
+                            </div>
+                        </a>
+                        <script>
+                            layui.use('carousel', function(){
+                                var carousel = layui.carousel;
+                                //建造实例
+                                carousel.render({
+                                    elem: '#test2'
+                                    ,width: '235px' //设置容器宽度
+                                    ,height:'490px'
+                                    ,arrow: 'hover' //悬停显示箭头
+                                    ,anim: 'fade' //切换动画方式
+                                    ,indicator:'none'
+                                    ,interval: 2000 //切换的时间
+
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="center">
+                        <div class="center-row clear">
+                            <div class="center-grid float-left">
+                                <dl style="background: url('/pic/ad/3.png') center bottom no-repeat;">
+                                    <dt>
+                                        <a href="#">双十一优惠专场</a>
+                                    </dt>
+                                    <dd>护肤套装券后679元</dd>
+                                </dl>
+                            </div>
+                            <div class="center-grid float-left">
+                                <dl style="background: url('/pic/ad/4.png') center bottom no-repeat;">
+                                    <dt>
+                                        <a href="#">过年必备好礼专场</a>
+                                    </dt>
+                                    <dd>红石榴券后679元</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="center-row clear">
+                            <div class="center-grid float-left">
+                                <dl style="background: url('/pic/ad/5.png') center bottom no-repeat;">
+                                    <dt>
+                                        <a href="#">过年必备好礼专场</a>
+                                    </dt>
+                                    <dd>红石榴券后679元</dd>
+                                </dl>
+                            </div>
+                            <div class="center-grid float-left">
+                                <dl style="background: url('/pic/ad/6.png') center bottom no-repeat;">
+                                    <dt>
+                                        <a href="#">过年必备好礼专场</a>
+                                    </dt>
+                                    <dd>红石榴券后679元</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="goods-ranking-list">
+                            <h3>最新热卖</h3>
+                            <ul>
+                                <li>
+                                    <img src="/pic/goods/5.jpg">
+                                    <div>
+                                        <a href="#">BIODERMA舒研温和保湿卸妆水</a>
+                                        <strong>￥96</strong>
+                                        <span>￥225</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="/pic/goods/6.jpg">
+                                    <div>
+                                        <a href="#">BIODERMA舒研温和保湿卸妆水</a>
+                                        <strong>￥96</strong>
+                                        <span>￥225</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="/pic/goods/7.jpg">
+                                    <div>
+                                        <a href="#">BIODERMA舒研温和保湿卸妆水</a>
+                                        <strong>￥96</strong>
+                                        <span>￥225</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="/pic/goods/8.jpg">
+                                    <div>
+                                        <a href="#">BIODERMA舒研温和保湿卸妆水</a>
+                                        <strong>￥96</strong>
+                                        <span>￥225</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+               <div class="section-heading clear">
+                    <h2 class="float-left">
+                        <a href="#">家居个护</a>
+                    </h2>
+                    <ul class="float-right">
+                        <li>
+                            <a href="#">洗护</a>
+                        </li>
+                        <li class="separator">|</li>
+                        <li>
+                            <a href="#">居家</a>
+                        </li>
+                        <li class="separator">|</li>
+                        <li>
+                            <a href="#">女性</a>
+                        </li>
+                        <li class="separator">|</li>
+                        <li>
+                            <a href="#">宠物</a>
+                        </li>
+                        <li class="separator">|</li>
+                        <li>
+                            <a href="#">家纺</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="section fourth-floor clear">
+                    <div class="left">
+                        <a href="#">
+                            <img src="/pic/ad/2.png">
+                        </a>
+                    </div>
+                    <div class="center">
+                        <div class="center-row clear">
+                            <div class="center-grid float-left">
+                                <dl style="background: url('/pic/ad/6.png') center bottom no-repeat;">
+                                    <dt>
+                                        <a href="#">过年必备好礼专场</a>
+                                    </dt>
+                                    <dd>红石榴券后679元</dd>
+                                </dl>
+                            </div>
+                            <div class="center-grid float-left">
+                                <dl style="background: url('/pic/ad/7.png') center bottom no-repeat;">
+                                    <dt>
+                                        <a href="#">过年必备好礼专场</a>
+                                    </dt>
+                                    <dd>红石榴券后679元</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="center-row clear">
+                            <div class="center-grid float-left">
+                                <dl style="background: url('/pic/ad/8.png') center bottom no-repeat;">
+                                    <dt>
+                                        <a href="#">过年必备好礼专场</a>
+                                    </dt>
+                                    <dd>红石榴券后679元</dd>
+                                </dl>
+                            </div>
+                            <div class="center-grid float-left">
+                                <dl style="background: url('/pic/ad/6.png') center bottom no-repeat;">
+                                    <dt>
+                                        <a href="#">过年必备好礼专场</a>
+                                    </dt>
+                                    <dd>红石榴券后679元</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="goods-ranking-list">
+                            <h3>最新热卖</h3>
+                            <ul>
+                                <li>
+                                    <img src="/pic/goods/9.jpg">
+                                    <div>
+                                        <a href="#">BIODERMA舒研温和保湿卸妆水</a>
+                                        <strong>￥96</strong>
+                                        <span>￥225</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="/pic/goods/10.jpg">
+                                    <div>
+                                        <a href="#">BIODERMA舒研温和保湿卸妆水</a>
+                                        <strong>￥96</strong>
+                                        <span>￥225</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="/pic/goods/11.jpg">
+                                    <div>
+                                        <a href="#">BIODERMA舒研温和保湿卸妆水</a>
+                                        <strong>￥96</strong>
+                                        <span>￥225</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="/pic/goods/12.jpg">
+                                    <div>
+                                        <a href="#">BIODERMA舒研温和保湿卸妆水</a>
+                                        <strong>￥96</strong>
+                                        <span>￥225</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-heading clear">
+                    <h2 class="float-left">
+                        <a href="#">猜您喜欢</a>
+                    </h2>
+                    <ul class="float-right">
+                        <li>
+                            <a href="#">更多</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="section fifth-floor goods-list-row clear">
+                    <div class="goods-list-item">
+                        <div class="layui-anim layui-anim-rotate">
+                        <div class="goods-list-image">
+                            <a href="#">
+                                <img src="/pic/goods/jj1.jpg">
+                            </a>
+                        </div>
+                        </div>
+                        <div class="goods-list-name">
+                            <a href="#">美一度 小酒柜现代简约靠墙轻奢餐厅储物柜家......</a>
+                        </div>
+                        <div class="goods-list-info">
+                            <strong><em>￥</em>4599</strong>
+                            <em>包邮</em>
+                            <span>￥8999</span>
+                        </div>
+                    </div>
+                    <div class="goods-list-item">
+                        <div class="layui-anim layui-anim-scaleSpring">
+                        <div class="goods-list-image">
+                            <a href="#">
+                                <img src="/pic/goods/jj2.jpg">
+                            </a>
+                        </div>
+                        </div>
+                        <div class="goods-list-name">
+                            <a href="#">苏菲洛克 电视柜 北欧小户型电视柜......</a>
+                        </div>
+                        <div class="goods-list-info">
+                            <strong><em>￥</em>1200</strong>
+                            <em>包邮</em>
+                            <span>￥1699</span>
+                        </div>
+                    </div>
+                    <div class="goods-list-item">
+                        <div class="layui-anim layui-anim-rotate">
+                        <div class="goods-list-image">
+                            <a href="#">
+                                <img src="/pic/goods/jj3.jpg">
+                            </a>
+                        </div>
+                        </div>
+                        <div class="goods-list-name">
+                            <a href="#">实木餐桌椅组合可变圆桌伸缩折叠现代中式餐厅......</a>
+                        </div>
+                        <div class="goods-list-info">
+                            <strong><em>￥</em>1799</strong>
+                            <em>包邮</em>
+                            <span>￥2500</span>
+                        </div>
+                    </div>
+                    <div class="goods-list-item">
+                        <div class="layui-anim layui-anim-scaleSpring">
+                        <div class="goods-list-image">
+                            <a href="#">
+                                <img src="/pic/goods/jj4.jpg">
+                            </a>
+                        </div>
+                        </div>
+                        <div class="goods-list-name">
+                            <a href="#"> 特大号黑檀木茶盘功夫茶具套装四合一乌金石......</a>
+                        </div>
+                        <div class="goods-list-info">
+                            <strong><em>￥</em>11688</strong>
+                            <em>包邮</em>
+                            <span>￥20000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="section fifth-floor goods-list-row clear">
+                    <div class="goods-list-item">
+                        <div class="layui-anim layui-anim-fadein">
+                        <div class="goods-list-image">
+                            <a href="#">
+                                <img src="/pic/goods/jjm1.jpg">
+                            </a>
+                        </div>
+                        </div>
+                        <div class="goods-list-name">
+                            <a href="#">枫岚情 金丝楠木茶盘套装全实木天然整块原木......</a>
+                        </div>
+                        <div class="goods-list-info">
+                            <strong><em>￥</em>12888</strong>
+                            <em>包邮</em>
+                            <span>￥15000</span>
+                        </div>
+                    </div>
+                    <div class="goods-list-item">
+                        <div class="layui-anim layui-anim-up">
+                        <div class="goods-list-image">
+                            <a href="#">
+                                <img src="/pic/goods/jjm2.jpg">
+                            </a>
+                        </div>
+                        </div>
+                        <div class="goods-list-name">
+                            <a href="#">沙发 客厅家具 双扶手单人位......</a>
+                        </div>
+                        <div class="goods-list-info">
+                            <strong><em>￥</em>3000</strong>
+                            <em>包邮</em>
+                            <span>￥4000</span>
+                        </div>
+                    </div>
+                    <div class="goods-list-item">
+                        <div class="layui-anim layui-anim-scale">
+                        <div class="goods-list-image">
+                            <a href="#">
+                                <img src="/pic/goods/jjm3.jpg">
+                            </a>
+                        </div>
+                        </div>
+                        <div class="goods-list-name">
+                            <a href="#">鲁菲特 实木餐桌 现代中式可伸缩折叠大理石......</a>
+                        </div>
+                        <div class="goods-list-info">
+                            <strong><em>￥</em>1999</strong>
+                            <em>包邮</em>
+                            <span>￥2599</span>
+                        </div>
+                    </div>
+                    <div class="goods-list-item">
+                        <div class="layui-anim layui-anim-upbit">
+                        <div class="goods-list-image">
+                            <a href="#">
+                                <img src="/pic/goods/jjm4.jpg">
+                            </a>
+                        </div>
+                        </div>
+                        <div class="goods-list-name">
+                            <a href="#">苏菲洛克 衣柜 北欧大衣柜平开门组合衣柜......</a>
+                        </div>
+                        <div class="goods-list-info">
+                            <strong><em>￥</em>1108</strong>
+                            <em>包邮</em>
+                            <span>￥1599</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<footer><div th:replace="html/Remnant.html :: myremnant"  ></div></footer>
+</body>
+</html>

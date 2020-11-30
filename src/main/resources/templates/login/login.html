@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录页面</title>
+    <link rel="stylesheet" href="/css/login.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/layui/css/layui.css" >
+</head>
+<body>
+    <div id="login-top">
+        <div class="logo-img">
+            <a href="/Login/index"><img src="/img/logo.png"></a>
+            <div class="logo-hy">欢迎登录</div>
+        </div>
+    </div>
+    <div class="logo-fg"></div>
+    <div class="logo-main">
+        <div class="logo-main-img">
+            <img src="/img/jmmain.png">
+            <div class="logo-login">
+                <div class="logo-fg"></div>
+                <div class="login-ts"><a>账号登录</a></div>
+                <div class="login-zj">
+                    <form class="layui-form" action="" method="post" style="margin-top: 40px;">
+                        <div class="layui-form-item" style="margin-top: 20px;">
+                            <label class="layui-form-label">
+                                <i class="layui-icon layui-icon-username" style="font-size: 20px; color: #393D49"></i></label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" required
+                                       lay-verify="required" placeholder="邮箱/用户名/手机号"
+                                       autocomplete="off" class="layui-input" style="width: 190px;">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" style="margin-top: 10px;">
+                            <label class="layui-form-label">
+                                <i class="layui-icon layui-icon-password" style="font-size: 20px; color: #393D49"></i>
+                            </label>
+                            <div class="layui-input-inline">
+                                <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                            <label class="layui-form-label">
+                                <i class="layui-icon layui-icon-vercode" style="font-size: 20px; color: #393D49"></i>
+                            </label>
+                            <div class="layui-input-inline" style="margin-top:-15px;">
+                                <div th:replace="login/Verification :: yanzheng"></div>
+                            </div>
+                        <div class="layui-form-item" style="margin-top: 30px;">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="formDemo">登录</button>
+                                <button type="reset" class="layui-btn layui-btn-primary "
+                                        style="background-color: lightseagreen;color: white">重置</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="login-qt">
+                    <p><a href="/Login/registered">立即注册</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-menu">
+        <ul>
+            <li>
+                <a href="#">关于我们</a>
+            </li>
+            <li class="separator">|</li>
+            <li>
+                <a href="#">服务条款</a>
+            </li>
+            <li class="separator">|</li>
+            <li>
+                <a href="#">人才招聘</a>
+            </li>
+            <li class="separator">|</li>
+            <li>
+                <a href="#">广告服务</a>
+            </li>
+            <li class="separator">|</li>
+            <li>
+                <a href="#">隐私保护</a>
+            </li>
+            <li class="separator">|</li>
+            <li>
+                <a href="#">联系我们</a>
+            </li>
+            <li class="separator">|</li>
+            <li>
+                <a href="#">帮助中心</a>
+            </li>
+        </ul>
+    </div>
+    <div id="footer-copyright">
+        <p>Copyright &copy; 19软件工程专升本.3319070111Jmp.</p>
+    </div>
+
+
+
+</body>
+</html>

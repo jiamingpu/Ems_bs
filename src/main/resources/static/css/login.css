@@ -1,0 +1,136 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+    margin: 0px;
+    padding: 0px;
+}
+#login-top{
+	width: 100%;
+    height: 100px;
+    border-top: #9F9F9F solid 1px;
+	}
+.logo-img{
+    width: 1000px;
+    height: 100px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.logo-img img{
+    width: 300px;
+    height: 100px;
+    float: left;
+}
+.logo-hy{
+    width: 300px;
+    height: 100px;
+    float: left;
+    margin-left: 50px;
+    margin-top: 20px;
+    font-family: 'Microsoft Yahei', Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    color: indianred;
+}
+.logo-fg{
+    width: 100%;
+    height: 35px;
+    background-color: azure;
+    border-top: #9F9F9F solid 1px;
+    border-bottom:#9F9F9F solid 1px ;
+}
+/*登录中间位置的设计*/
+.logo-main{
+    width: 100%;
+    height: 500px;
+    background-color: #d52d5a;
+}
+
+.logo-main-img{
+    width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.logo-main-img img{
+    width: 550px;
+    height: 500px;
+    float: left;
+}
+.logo-login{
+    background-color: white;
+    width: 370px;
+    height: 420px;
+    float: left;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+/*注册页面的设计*/
+.login-link{
+    width: 200px;
+    height: 30px;
+    float: left;
+    margin-left: 120px;
+    margin-top: 65px;
+    font-size: 20px;
+}
+.register-main{
+    margin-top: -8px;
+    width: 100%;
+    height: 450px;
+
+}
+.register-main .register-zc{
+    width: 1000px;
+    height: 450px;
+    margin: 0 auto;
+}
+.register-main-zj{
+    width: 400px;
+    height: 450px;
+    margin: 0 auto;
+    align: center;
+}
+
+
+
+
+
+
+
+
+.login-ts{
+    width: 100%;
+    height: 50px;
+    border-bottom: #C9C5C5 solid 1px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 20px;
+
+}
+.login-ts a{
+    font-family: 'Microsoft Yahei', Arial, Helvetica, sans-serif;
+    color: indianred;
+}
+.login-zj{
+    width: 100%;
+    height: 280px;
+    border-top: white solid 1px;
+}
+.login-qt{
+    width: 100%;
+    height: 53px;
+    border-top: #9F9F9F solid 1px;
+    text-align: center;
+    line-height: 53px;
+}
+.login-qt a{
+    font-size: 20px;
+    font-family: 'Microsoft Yahei', Arial, Helvetica, sans-serif;
+    color: indianred;
+}
+.login-qt a:hover{
+    color: #E00000;
+}
+
+
+
+

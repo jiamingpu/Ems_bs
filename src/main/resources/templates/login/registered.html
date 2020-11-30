@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面的设计</title>
+    <link rel="stylesheet" href="/css/login.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/layui/css/layui.css" >
+</head>
+<body>
+<div id="login-top">
+    <div class="logo-img">
+        <a href="/Login/index"><img src="/img/logo.png"></a>
+        <div class="logo-hy">欢迎注册</div>
+        <div class="login-link"><span style="color: #C9C5C5;">已有账号？</span><a href="/Login/login" style="color: red">
+            请登录<i class="layui-icon layui-icon-right" style="font-size: 20px; color: red;"></i>
+        </a></div>
+    </div>
+</div>
+<hr>
+<div class="register-main">
+    <div class="register-zc">
+            <div class="login-ts"><a>注册账号</a></div>
+            <div class="register-main-zj">
+                <form class="layui-form" action="" method="post" style="margin-top: 40px;">
+                    <div class="layui-form-item" style="margin-top: 20px;">
+                        <label class="layui-form-label">
+                            <i class="layui-icon layui-icon-username" style="font-size: 20px; color: #393D49"></i></label>
+                        <div class="layui-input-block">
+                            <input type="text" name="title" required
+                                   lay-verify="required" placeholder="邮箱/用户名/手机号"
+                                   autocomplete="off" class="layui-input" style="width: 210px;">
+                        </div>
+                    </div>
+                    <div class="layui-form-item" style="margin-top: 10px;">
+                        <label class="layui-form-label">
+                            <i class="layui-icon layui-icon-password" style="font-size: 20px; color: #393D49"></i>
+                        </label>
+                        <div class="layui-input-inline">
+                            <input type="password" name="password1" id="pwd1" required lay-verify="required"
+                                   placeholder="请输入密码" autocomplete="off" class="layui-input" style="width: 210px;">
+                        </div>
+                    </div>
+                    <div class="layui-form-item" style="margin-top: 10px;">
+                        <label class="layui-form-label">
+                            <i class="layui-icon layui-icon-password" style="font-size: 20px; color: #393D49"></i>
+                        </label>
+                        <div class="layui-input-inline">
+                            <input type="password" name="password2" id="pwd2" required lay-verify="required" placeholder="在输入一次密码"
+                                   autocomplete="off" class="layui-input" onkeyup="validate()" style="width: 210px;"><span id="tishi" ></span>
+                        </div>
+                    </div>
+                    <script src="/js/jquery-3.1.1.js"></script>
+                    <script>
+                        function validate() {
+                            var pwd1 = document.getElementById("pwd1").value;
+                            var pwd2 = document.getElementById("pwd2").value;
+                            <!-- 对比两次输入的密码 -->
+                            if(pwd1 == pwd2) {
+                                document.getElementById("tishi").innerHTML="<font color='green'>两次密码相同</font>";
+                            }
+                            else {
+                                document.getElementById("tishi").innerHTML="<font color='red'>两次密码不相同</font>";
+                            }
+                        }
+                    </script>
+
+                    <label class="layui-form-label" >
+                        <i class="layui-icon layui-icon-vercode" style="font-size: 20px; color: #393D49"></i>
+                    </label>
+                    <div class="layui-input-inline" style="margin-top:-15px;">
+                        <div th:replace="login/Verification :: yanzheng"></div>
+                    </div>
+                    <div class="layui-form-item" style="margin-top: 40px;">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="formDemo">注册</button>
+                            <button type="reset" class="layui-btn layui-btn-primary "
+                                    style="background-color: lightseagreen;color: white;margin-left: 30px;">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+    </div>
+
+</div>
+
+<div id="footer-menu">
+    <ul>
+        <li>
+            <a href="#">关于我们</a>
+        </li>
+        <li class="separator">|</li>
+        <li>
+            <a href="#">服务条款</a>
+        </li>
+        <li class="separator">|</li>
+        <li>
+            <a href="#">人才招聘</a>
+        </li>
+        <li class="separator">|</li>
+        <li>
+            <a href="#">广告服务</a>
+        </li>
+        <li class="separator">|</li>
+        <li>
+            <a href="#">隐私保护</a>
+        </li>
+        <li class="separator">|</li>
+        <li>
+            <a href="#">联系我们</a>
+        </li>
+        <li class="separator">|</li>
+        <li>
+            <a href="#">帮助中心</a>
+        </li>
+    </ul>
+</div>
+<div id="footer-copyright">
+    <p>Copyright &copy; 19软件工程专升本.3319070111Jmp.</p>
+</div>
+
+</body>
+</html>

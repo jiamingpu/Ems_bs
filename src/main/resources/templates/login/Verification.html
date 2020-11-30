@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery数字字母组合验证码</title>
+
+    <style>
+        .input-code {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+<div th:fragment="yanzheng" >
+    <center><br>
+        <div>
+            <input type="text" class="input-code" placeholder="验证码"style="width: 80px; height: 30px;">
+            <span class="code"  title='点击切换' style="height: 20px"></span>
+
+        </div>
+    </center>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.code.js"></script>
+    <script>
+        (function($){
+            $('.code').createCode({
+                len:6
+            });
+
+        })(jQuery);
+
+
+
+        (function($){
+            $('.input-code').blur(function(){
+                if($(this).val().toLowerCase()!==$('.code').children('input').val().toLowerCase()){
+                    alert('验证码不正确')
+                }else{
+                    alert('验证通过')
+                }
+            })
+        })(jQuery);
+    </script>
+</div>
+</body>
+</html>
