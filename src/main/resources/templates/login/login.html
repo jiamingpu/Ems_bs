@@ -22,12 +22,12 @@
                 <div class="logo-fg"></div>
                 <div class="login-ts"><a>账号登录</a></div>
                 <div class="login-zj">
-                    <form class="layui-form" action="" method="post" style="margin-top: 40px;">
+                    <form class="layui-form" action="/Login/login" method="post" style="margin-top: 40px;">
                         <div class="layui-form-item" style="margin-top: 20px;">
                             <label class="layui-form-label">
                                 <i class="layui-icon layui-icon-username" style="font-size: 20px; color: #393D49"></i></label>
                             <div class="layui-input-block">
-                                <input type="text" name="title" required
+                                <input type="text" name="UserName" required
                                        lay-verify="required" placeholder="邮箱/用户名/手机号"
                                        autocomplete="off" class="layui-input" style="width: 190px;">
                             </div>
@@ -37,18 +37,44 @@
                                 <i class="layui-icon layui-icon-password" style="font-size: 20px; color: #393D49"></i>
                             </label>
                             <div class="layui-input-inline">
-                                <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                                <input type="password" name="UserPassword" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                             <label class="layui-form-label">
                                 <i class="layui-icon layui-icon-vercode" style="font-size: 20px; color: #393D49"></i>
                             </label>
-                            <div class="layui-input-inline" style="margin-top:-15px;">
-                                <div th:replace="login/Verification :: yanzheng"></div>
+                            <div class="layui-input-inline">
+                                <div>
+                                    <input type="text" class="input-code" placeholder="验证码"    style="width: 80px; height: 30px;">
+                                    <span class="code"  title='点击切换' style="height: 20px"></span>
+                                    <p id="test"  title='点击切换' style="height: 20px"></p>
+
+                                </div>
+                                <script src="/js/jquery.min.js"></script>
+                                <script src="/js/jquery.code.js"></script>
+                                <script>
+                                    (function($){
+                                        $('.code').createCode({
+                                            len:6
+                                        });
+
+                                    })(jQuery);
+                                    (function($){
+                                        $('.input-code').blur(function(){
+                                            if($(this).val().toLowerCase()!==$('.code').children('input').val().toLowerCase()){
+                                                $("#test").text('验证码有误');
+                                                $("#buttonLogin").attr("disabled",'true');
+                                            }else{
+                                                $("#test").text('验证通过');
+                                                $("#buttonLogin").attr("disabled",false);
+                                            }
+                                        })
+                                    })(jQuery);
+                                </script>
                             </div>
                         <div class="layui-form-item" style="margin-top: 30px;">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">登录</button>
+                                <button class="layui-btn" lay-submit lay-filter="formDemo" id="buttonLogin" disabled="disabled">登录</button>
                                 <button type="reset" class="layui-btn layui-btn-primary "
                                         style="background-color: lightseagreen;color: white">重置</button>
                             </div>

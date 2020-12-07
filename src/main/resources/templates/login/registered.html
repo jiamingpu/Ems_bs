@@ -12,7 +12,7 @@
     <div class="logo-img">
         <a href="/Login/index"><img src="/img/logo.png"></a>
         <div class="logo-hy">欢迎注册</div>
-        <div class="login-link"><span style="color: #C9C5C5;">已有账号？</span><a href="/Login/login" style="color: red">
+        <div class="login-link"><span style="color: #C9C5C5;">已有账号？</span><a href="/Login/users" style="color: red">
             请登录<i class="layui-icon layui-icon-right" style="font-size: 20px; color: red;"></i>
         </a></div>
     </div>
@@ -68,8 +68,34 @@
                     <label class="layui-form-label" >
                         <i class="layui-icon layui-icon-vercode" style="font-size: 20px; color: #393D49"></i>
                     </label>
-                    <div class="layui-input-inline" style="margin-top:-15px;">
-                        <div th:replace="login/Verification :: yanzheng"></div>
+                    <div class="layui-input-inline">
+                        <div>
+                            <input type="text" class="input-code" placeholder="验证码"    style="width: 80px; height: 30px;">
+                            <span class="code"  title='点击切换' style="height: 20px"></span>
+                            <p id="test"  title='点击切换' style="height: 20px"></p>
+
+                        </div>
+                        <script src="/js/jquery.min.js"></script>
+                        <script src="/js/jquery.code.js"></script>
+                        <script>
+                            (function($){
+                                $('.code').createCode({
+                                    len:6
+                                });
+
+                            })(jQuery);
+                            (function($){
+                                $('.input-code').blur(function(){
+                                    if($(this).val().toLowerCase()!==$('.code').children('input').val().toLowerCase()){
+                                        $("#test").text('验证码有误');
+                                        //$("#buttonLogin").attr("disabled",'true');
+                                    }else{
+                                        $("#test").text('验证通过');
+                                       // $("#buttonLogin").attr("disabled",false);
+                                    }
+                                })
+                            })(jQuery);
+                        </script>
                     </div>
                     <div class="layui-form-item" style="margin-top: 40px;">
                         <div class="layui-input-block">
