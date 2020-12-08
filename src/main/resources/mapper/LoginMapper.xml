@@ -6,6 +6,9 @@
 <mapper namespace="com.sqgxy.jmp.ems_bs.mapper.LoginMapper">
     <select id="UserLogin" resultType="com.sqgxy.jmp.ems_bs.entity.User">
         select * from user where UserName=#{userName} and UserPassword=#{userPassword}
-
     </select>
+    <insert id="InsertUser" parameterType="com.sqgxy.jmp.ems_bs.entity.User">
+        insert into USER (UserName,UserPassword) values(#{userName},#{userPassword})
+
+    </insert>
 </mapper>

@@ -9,5 +9,5 @@ import org.springframework.stereotype.Component;
 public interface LoginMapper {
 
     User UserLogin(@Param(value = "userName")String userName,@Param(value = "userPassword")String userPassword);
-
+    int InsertUser(User user);
 }

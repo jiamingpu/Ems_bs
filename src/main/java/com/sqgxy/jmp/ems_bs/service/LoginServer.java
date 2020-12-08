@@ -15,4 +15,9 @@ public class LoginServer {
         User count=loginMapper.UserLogin(userName,userPassword);
         return count;
     }
+    //用户注册
+    public int InsertUser(User user){
+        int number= loginMapper.InsertUser(user);
+        return number;
+    }
 }

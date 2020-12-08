@@ -29,11 +29,8 @@ public class LoginController {
         String userName=user.getUserName();
         System.out.println(userName);
         String userPassword=user.getUserPassword();
-        System.out.println(userPassword);
         user=loginServer.UserLogin(userName,userPassword);
-        System.out.println(user);
         if(user!=null){
-            System.out.println("4");
             session.setAttribute("user",user);
             session.setAttribute("userName",userName);
             return "html/index";
@@ -50,6 +47,21 @@ public class LoginController {
     @RequestMapping("registered")
     public String registered(){
         return "login/registered";
+    }
+    @RequestMapping("/userRegister")
+    public String userRegister(User user,RequestMethod post,RequestMethod get){
+        String userName=user.getUserName();
+        String userPassword=user.getUserPassword();
+        int number= loginServer.InsertUser(user);
+        if(userName!=null&&userPassword!=null&&number>0){
+            return "login/login";
+        }else{
+            return "login/registered";
+        }
+
+
+
+
     }
     @RequestMapping("test")
     public String test(){

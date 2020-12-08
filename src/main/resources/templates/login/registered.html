@@ -22,12 +22,12 @@
     <div class="register-zc">
             <div class="login-ts"><a>注册账号</a></div>
             <div class="register-main-zj">
-                <form class="layui-form" action="" method="post" style="margin-top: 40px;">
+                <form class="layui-form" action="/Login/userRegister" method="post" style="margin-top: 40px;">
                     <div class="layui-form-item" style="margin-top: 20px;">
                         <label class="layui-form-label">
                             <i class="layui-icon layui-icon-username" style="font-size: 20px; color: #393D49"></i></label>
                         <div class="layui-input-block">
-                            <input type="text" name="title" required
+                            <input type="text" name="UserName" required
                                    lay-verify="required" placeholder="邮箱/用户名/手机号"
                                    autocomplete="off" class="layui-input" style="width: 210px;">
                         </div>
@@ -37,7 +37,7 @@
                             <i class="layui-icon layui-icon-password" style="font-size: 20px; color: #393D49"></i>
                         </label>
                         <div class="layui-input-inline">
-                            <input type="password" name="password1" id="pwd1" required lay-verify="required"
+                            <input type="password" name="UserPassword" id="pwd1" required lay-verify="required"
                                    placeholder="请输入密码" autocomplete="off" class="layui-input" style="width: 210px;">
                         </div>
                     </div>
@@ -88,10 +88,10 @@
                                 $('.input-code').blur(function(){
                                     if($(this).val().toLowerCase()!==$('.code').children('input').val().toLowerCase()){
                                         $("#test").text('验证码有误');
-                                        //$("#buttonLogin").attr("disabled",'true');
+                                        $("#buttonRegis").attr("disabled",'true');
                                     }else{
                                         $("#test").text('验证通过');
-                                       // $("#buttonLogin").attr("disabled",false);
+                                        $("#buttonRegis").attr("disabled",false);
                                     }
                                 })
                             })(jQuery);
@@ -99,7 +99,7 @@
                     </div>
                     <div class="layui-form-item" style="margin-top: 40px;">
                         <div class="layui-input-block">
-                            <button class="layui-btn" lay-submit lay-filter="formDemo">注册</button>
+                            <button class="layui-btn" lay-submit lay-filter="formDemo" id="buttonRegis">注册</button>
                             <button type="reset" class="layui-btn layui-btn-primary "
                                     style="background-color: lightseagreen;color: white;margin-left: 30px;">重置</button>
                         </div>
